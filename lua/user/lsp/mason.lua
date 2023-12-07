@@ -2,7 +2,8 @@ local servers = {
 	"tsserver",
 	"lua_ls",
 	"rust_analyzer",
-	"pyright"
+	"pyright",
+	"denols",
 }
 
 local settings = {
