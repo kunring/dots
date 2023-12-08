@@ -17,6 +17,7 @@ require("tokyonight").setup({
 	on_colors = function(colors)
 		colors.comment = "#add1a9"
 		colors.bg_statusline = ""
+		colors.terminal_black = "#a7b0d9"
 	end,
 
 	on_highlights = function(highlights, colors)
