@@ -1,10 +1,6 @@
-local function is_deno()
-	return require("lspconfig").util.root_pattern("deno.json", "deno.jsonc") ~= nil
-end
-
 local function denoprettier(filetype)
 	return function()
-		if is_deno() then
+		if require("user.util").is_deno() then
 			return require("formatter.filetypes." .. filetype).denofmt()
 		else
 			return require("formatter.filetypes." .. filetype).prettier()
@@ -20,10 +16,10 @@ require("formatter").setup({
 			denoprettier("typescript"),
 		},
 		javascript = {
-				denoprettier("javascript")
+			denoprettier("javascript"),
 		},
 		json = {
-				denoprettier("json")
+			denoprettier("json"),
 		},
 		html = {
 			require("formatter.filetypes.html").prettier,
