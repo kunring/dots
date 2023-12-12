@@ -1,6 +1,6 @@
 local function denoprettier(filetype)
 	return function()
-		if require("user.util").is_deno() then -- TODO: Use find_denojsonc_ancestor here?
+		if require("user.util").find_denojsonc_ancestor(vim.api.nvim_buf_get_name(0)) then
 			return require("formatter.filetypes." .. filetype).denofmt()
 		else
 			return require("formatter.filetypes." .. filetype).prettier()
