@@ -9,6 +9,11 @@ vim.o.foldenable = true
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
 vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
+-- Disable default fold deletion commands
+vim.keymap.set('n', 'zd', '<Nop>')
+vim.keymap.set('n', 'zD', '<Nop>')
+vim.keymap.set('n', 'zE', '<Nop>')
+
 require('ufo').setup({
     provider_selector = function(bufnr, filetype, buftype)
         return {'treesitter', 'indent'}
