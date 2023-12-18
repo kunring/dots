@@ -21,9 +21,9 @@ require("tokyonight").setup({
 	end,
 
 	on_highlights = function(highlights, colors)
-		highlights.LineNr = {fg = "#99b327"}
-		highlights.CursorLineNr = {fg = "#a6ff00"}
-		highlights.CursorLine = {bg = "", underline = true}
+		highlights.LineNr = { fg = "#99b327" }
+		highlights.CursorLineNr = { fg = "#a6ff00" }
+		highlights.CursorLine = { bg = "", underline = true }
 	end,
 })
 
@@ -31,9 +31,9 @@ local colorscheme = "tokyonight"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
-  vim.notify("colorscheme " .. colorscheme .. " not found!")
-  return
+	vim.notify("colorscheme " .. colorscheme .. " not found!")
+	return
 end
 
 -- Disable ~ in sidebar for blank lines
-vim.opt.fillchars = { eob = ' ' }
+vim.opt.fillchars = { eob = " " }

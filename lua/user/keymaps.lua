@@ -18,7 +18,6 @@ vim.api.nvim_set_keymap("n", "<leader>e", ":Lex 30<CR>", opts)
 vim.api.nvim_set_keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 vim.api.nvim_set_keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
-
 -- Visual --
 -- Stay in indent mode
 vim.api.nvim_set_keymap("v", "<", "<gv^", opts)
