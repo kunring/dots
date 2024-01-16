@@ -4,6 +4,7 @@ local servers = {
 	"rust_analyzer",
 	"pyright",
 	"denols",
+	"clangd",
 }
 
 local settings = {
