@@ -28,6 +28,8 @@ vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
 vim.opt.wrap = false
+vim.opt.modeline = true
+vim.opt.modelines = 3
 
 -- godmode
 vim.opt.scrolloff = 8
