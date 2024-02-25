@@ -69,4 +69,20 @@ require("lazy").setup({
 			require("Comment").setup()
 		end,
 	},
+	{
+		"vuki656/package-info.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		init = function()
+			local npminfo = require("package-info")
+			npminfo.setup()
+			local opts = { noremap = true, silent = true }
+			vim.keymap.set({ "n" }, "<LEADER>nt", npminfo.toggle, opts)
+			vim.keymap.set({ "n" }, "<LEADER>nu", npminfo.update, opts)
+			vim.keymap.set({ "n" }, "<LEADER>nd", npminfo.delete, opts)
+			vim.keymap.set({ "n" }, "<LEADER>ni", npminfo.install, opts)
+			vim.keymap.set({ "n" }, "<LEADER>np", npminfo.change_version, opts)
+		end,
+	},
 })
