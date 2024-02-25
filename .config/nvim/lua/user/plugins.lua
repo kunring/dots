@@ -85,4 +85,5 @@ require("lazy").setup({
 			vim.keymap.set({ "n" }, "<LEADER>np", npminfo.change_version, opts)
 		end,
 	},
+	"jghauser/mkdir.nvim",
 })
