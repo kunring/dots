@@ -36,3 +36,6 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
 vim.cmd([[set iskeyword+=-]])
+
+vim.g.delimitMate_expand_cr = 2
+vim.g.delimitMate_expand_space = true
