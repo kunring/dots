@@ -86,4 +86,13 @@ require("lazy").setup({
 		end,
 	},
 	"jghauser/mkdir.nvim",
+	{
+		"kunring/copy-as-markdown.nvim",
+		init = function()
+			require("copy-as-markdown").setup()
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_set_keymap("n", "<leader>cm", ":CopyAsMarkdown<CR>", opts)
+			vim.api.nvim_set_keymap("v", "<leader>cm", ":CopyAsMarkdown<CR>", opts)
+		end,
+	},
 })
