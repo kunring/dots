@@ -1,3 +1,4 @@
+local inactive = "#add1a9"
 require("tokyonight").setup({
 	style = "storm",
 	light_style = "day",
@@ -14,7 +15,7 @@ require("tokyonight").setup({
 	hide_inactive_statusline = false,
 
 	on_colors = function(colors)
-		colors.comment = "#add1a9"
+		colors.comment = inactive
 		colors.bg_statusline = ""
 		colors.terminal_black = "#a7b0d9"
 	end,
@@ -23,6 +24,8 @@ require("tokyonight").setup({
 		highlights.LineNr = { fg = "#99b327" }
 		highlights.CursorLineNr = { fg = "#a6ff00" }
 		highlights.CursorLine = { bg = "", underline = true }
+		highlights.NeoTreeFileStats = { fg = colors.cyan }
+		highlights.NeoTreeFileStatsHeader = { fg = colors.cyan, bold = true }
 	end,
 })
 

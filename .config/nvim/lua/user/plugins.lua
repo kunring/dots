@@ -95,4 +95,25 @@ require("lazy").setup({
 			vim.api.nvim_set_keymap("v", "<leader>cm", ":CopyAsMarkdown<CR>", opts)
 		end,
 	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
+		},
+		init = function()
+			require("neo-tree").setup({
+				enable_normal_mode_for_inputs = true,
+				filesystem = {
+					filtered_items = {
+						hide_dotfiles = false,
+						hide_gitignored = false
+					}
+				}
+			})
+			local opts = { noremap = true, silent = true }
+			vim.api.nvim_set_keymap("n", "<leader>nt", ":Neotree<CR>", opts)
+		end,
+	},
 })
