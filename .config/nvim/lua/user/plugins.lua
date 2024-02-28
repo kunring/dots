@@ -108,9 +108,9 @@ require("lazy").setup({
 				filesystem = {
 					filtered_items = {
 						hide_dotfiles = false,
-						hide_gitignored = false
-					}
-				}
+						hide_gitignored = false,
+					},
+				},
 			})
 			local opts = { noremap = true, silent = true }
 			vim.api.nvim_set_keymap("n", "<leader>nt", ":Neotree<CR>", opts)
