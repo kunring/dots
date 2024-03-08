@@ -113,7 +113,7 @@ require("lazy").setup({
 				},
 			})
 			local opts = { noremap = true, silent = true }
-			vim.api.nvim_set_keymap("n", "<leader>nt", ":Neotree<CR>", opts)
+			vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
 
 			-- Disable netrw
 			vim.g.loaded_netrw = 1
