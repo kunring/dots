@@ -39,5 +39,8 @@ require("formatter").setup({
 		cpp = {
 			require("formatter.filetypes.cpp").clangformat,
 		},
+		css = {
+			require("formatter.filetypes.html").prettier,
+		},
 	},
 })
