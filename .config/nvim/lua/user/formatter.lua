@@ -42,5 +42,12 @@ require("formatter").setup({
 		css = {
 			require("formatter.filetypes.html").prettier,
 		},
+		haskell = function()
+			return {
+				exe = "ormolu",
+				args = { "--no-cabal" },
+				stdin = true,
+			}
+		end,
 	},
 })
