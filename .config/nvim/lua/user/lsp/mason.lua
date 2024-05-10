@@ -1,10 +1,14 @@
-local servers = {
+local mason_servers = {
 	"tsserver",
 	"lua_ls",
 	"rust_analyzer",
 	"pyright",
 	"denols",
 	"clangd",
+}
+local servers = {
+	"hls",
+	table.unpack(mason_servers),
 }
 
 local settings = {
@@ -22,8 +26,8 @@ local settings = {
 
 require("mason").setup(settings)
 require("mason-lspconfig").setup({
-	ensure_installed = servers,
-	automatic_installation = true,
+	ensure_installed = mason_servers,
+	automatic_installation = { exclude = { "hls" } },
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
