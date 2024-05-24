@@ -40,7 +40,6 @@ require("lazy").setup({
 	"mhartington/formatter.nvim",
 	"folke/tokyonight.nvim",
 	"lewis6991/gitsigns.nvim",
-	{ "kevinhwang91/nvim-ufo", dependencies = "kevinhwang91/promise-async" },
 
 	"hrsh7th/nvim-cmp",
 	"hrsh7th/cmp-path",
