@@ -63,6 +63,10 @@ window#waybar.hidden {
     color: red;
 }
 
+#workspaces .visible {
+	background-color: #5a5a82;
+}
+
 #mode {
     background-color: #64727D;
     border-bottom: 1px solid #ffffff;
