@@ -31,3 +31,6 @@ vim.api.nvim_set_keymap("v", "p", '"_dP', opts)
 -- Formatter
 vim.api.nvim_set_keymap("n", "<leader>f", ":Format<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>F", ":FormatWrite<CR>", opts)
+
+-- Toggle LSP diagnostic info
+vim.api.nvim_set_keymap("n", "<leader>d", ":DiagnosticToggle<CR>", opts)
