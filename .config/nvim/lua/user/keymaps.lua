@@ -25,7 +25,8 @@ vim.api.nvim_set_keymap("v", ">", ">gv^", opts)
 -- Move text up and down
 vim.api.nvim_set_keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 vim.api.nvim_set_keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
-vim.api.nvim_set_keymap("v", "p", '"_dP', opts) -- Do not copy deletion to clipboard when pasting over visual selection
+-- Disable copying of deleted content to clipboard when pasting over a visual selection
+vim.api.nvim_set_keymap("v", "p", '"_dP', opts)
 
 -- Formatter
 vim.api.nvim_set_keymap("n", "<leader>f", ":Format<CR>", opts)
