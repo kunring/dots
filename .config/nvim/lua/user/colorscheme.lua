@@ -1,4 +1,7 @@
-local inactive = "#add1a9"
+local custom = {
+	inactive = "#add1a9",
+	bg_grey = "#373640",
+}
 require("tokyonight").setup({
 	style = "storm",
 	light_style = "day",
@@ -15,7 +18,7 @@ require("tokyonight").setup({
 	hide_inactive_statusline = false,
 
 	on_colors = function(colors)
-		colors.comment = inactive
+		colors.comment = custom.inactive
 		colors.bg_statusline = ""
 		colors.terminal_black = "#a7b0d9"
 	end,
@@ -26,6 +29,7 @@ require("tokyonight").setup({
 		highlights.CursorLine = { bg = "", underline = true }
 		highlights.NeoTreeFileStats = { fg = colors.cyan }
 		highlights.NeoTreeFileStatsHeader = { fg = colors.cyan, bold = true }
+		highlights["@markup.raw.markdown_inline"] = { fg = colors.cyan, bg = custom.bg_grey }
 	end,
 })
 
