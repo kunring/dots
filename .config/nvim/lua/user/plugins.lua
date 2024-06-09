@@ -103,11 +103,19 @@ require("lazy").setup({
 		},
 		init = function()
 			require("neo-tree").setup({
-				enable_normal_mode_for_inputs = true,
 				filesystem = {
 					filtered_items = {
 						hide_dotfiles = false,
 						hide_gitignored = false,
+					},
+				},
+				event_handlers = {
+					{
+						event = "neo_tree_popup_input_ready",
+						handler = function(args)
+							vim.cmd("stopinsert")
+							vim.api.nvim_feedkeys("0l", "m", false)
+						end,
 					},
 				},
 			})
