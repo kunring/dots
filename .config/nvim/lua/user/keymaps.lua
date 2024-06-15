@@ -32,5 +32,5 @@ vim.api.nvim_set_keymap("v", "p", '"_dP', opts)
 vim.api.nvim_set_keymap("n", "<leader>f", ":Format<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>F", ":FormatWrite<CR>", opts)
 
--- Toggle LSP diagnostic info
-vim.api.nvim_set_keymap("n", "<leader>d", ":DiagnosticToggle<CR>", opts)
+-- Toggle "noise" (LSP diagnostic nags, gitsigns)
+vim.api.nvim_set_keymap("n", "<leader>d", ":NoiseToggle<CR>", opts)
