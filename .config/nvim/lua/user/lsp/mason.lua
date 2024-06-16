@@ -1,13 +1,12 @@
-local mason_servers = {
+local mason_servers = {}
+local system_servers = {
+	"hls",
 	"tsserver",
 	"lua_ls",
 	"rust_analyzer",
 	"pyright",
 	"denols",
 	"clangd",
-}
-local system_servers = {
-	"hls",
 }
 local servers = {
 	table.unpack(mason_servers),
