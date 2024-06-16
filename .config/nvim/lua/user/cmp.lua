@@ -10,7 +10,6 @@ end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
---   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "󰊄",
 	Method = "m",
@@ -38,12 +37,11 @@ local kind_icons = {
 	Operator = "",
 	TypeParameter = "󰉺",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- For `luasnip` users.
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = {
@@ -62,12 +60,10 @@ cmp.setup({
 			"s",
 		}),
 
-		-- Scroll in snippet docs
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 
-		-- No idea what this does
-		["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+		["<C-y>"] = cmp.config.disable,
 
 		-- Close/reopen snippet menu
 		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -76,8 +72,6 @@ cmp.setup({
 			c = cmp.mapping.close(),
 		}),
 
-		-- Accept currently selected item. If none selected, `select` first item.
-		-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	},
 	formatting = {
