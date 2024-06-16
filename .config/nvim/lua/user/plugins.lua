@@ -3,7 +3,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	"folke/lazy.nvim",
-	"Raimondi/delimitMate",
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
