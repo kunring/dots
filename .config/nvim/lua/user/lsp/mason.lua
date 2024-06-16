@@ -6,9 +6,12 @@ local mason_servers = {
 	"denols",
 	"clangd",
 }
-local servers = {
+local system_servers = {
 	"hls",
+}
+local servers = {
 	table.unpack(mason_servers),
+	table.unpack(system_servers),
 }
 
 local settings = {
@@ -27,7 +30,7 @@ local settings = {
 require("mason").setup(settings)
 require("mason-lspconfig").setup({
 	ensure_installed = mason_servers,
-	automatic_installation = { exclude = { "hls" } },
+	automatic_installation = { exclude = system_servers },
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
