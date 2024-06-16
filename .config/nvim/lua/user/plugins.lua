@@ -102,7 +102,7 @@ require("lazy").setup({
 				event_handlers = {
 					{
 						event = "neo_tree_popup_input_ready",
-						handler = function(args)
+						handler = function()
 							vim.cmd("stopinsert")
 							vim.api.nvim_feedkeys("0l", "m", false)
 						end,
