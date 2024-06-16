@@ -116,22 +116,4 @@ require("lazy").setup({
 			vim.g.loaded_netrwPlugin = 1
 		end,
 	},
-	{
-		"Exafunction/codeium.vim",
-		init = function()
-			vim.g.codeium_disable_bindings = true
-			vim.g.codeium_manual = true
-			local opts = { noremap = true, expr = true, silent = true }
-			-- S for suggest
-			vim.keymap.set("i", "<C-s>", vim.fn["codeium#Complete"], opts)
-			-- A for accept
-			vim.keymap.set("i", "<C-a>", vim.fn["codeium#Accept"], opts)
-			vim.keymap.set("i", "<C-,>", function()
-				return vim.fn["codeium#CycleCompletions"](1)
-			end, opts)
-			vim.keymap.set("i", "<C-.>", function()
-				return vim.fn["codeium#CycleCompletions"](-1)
-			end, opts)
-		end,
-	},
 })
