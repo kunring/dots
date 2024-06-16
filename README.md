@@ -21,5 +21,13 @@ pacman -S --needed "${PKGS[@]}"
 
 Neovim also uses `rust-analyzer` managed by `rustup`.
 
+Installing `lazy.nvim`, the package manager for nvim:
+```sh
+DIR="~/.config/nvim/lazy"
+mkdir -p "$DIR"
+cd "$DIR"
+git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable
+```
+
 Place your own wallpaper at `~/.config/hypr/background.png`.
 [Source for example wallpaper used in screenshot.png](https://github.com/DaringCuteSeal/wallpapers/blob/gh-pages/os/arch-journey/arch-journey-dark.png).
