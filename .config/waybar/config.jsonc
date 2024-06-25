@@ -74,7 +74,8 @@
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+	"on-click-right": "$HOME/.config/waybar/toggle-default-source-mute.sh"
   },
   "custom/media": {
     "format": "{icon} {}",
