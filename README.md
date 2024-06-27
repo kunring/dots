@@ -15,6 +15,7 @@ PKGS=("hyprland"
 "breeze-gtk" # Set GTK theme using nwg-look
 # Section for LSP servers used by nvim:
 "typescript"
+"typescript-language-server"
 "lua-language-server"
 "pyright"
 "rustup"
