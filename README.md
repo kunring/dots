@@ -11,6 +11,8 @@ PKGS=("hyprland"
 "python"
 "wofi"
 "nodejs" "yarn" # Used for some nvim packages
+"nwg-look"
+"breeze-gtk" # Set GTK theme using nwg-look
 # Section for LSP servers used by nvim:
 "typescript"
 "lua-language-server"
