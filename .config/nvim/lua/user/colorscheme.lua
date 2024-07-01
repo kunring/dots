@@ -41,5 +41,7 @@ if not status_ok then
 	return
 end
 
+vim.api.nvim_set_hl(0, '@lsp.type.unresolvedReference.rust', {})
+
 -- Disable ~ in sidebar for blank lines
 vim.opt.fillchars = { eob = " " }
