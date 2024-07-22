@@ -97,6 +97,7 @@ require("lazy").setup({
 						hide_dotfiles = false,
 						hide_gitignored = false,
 					},
+					hijack_netrw_behavior = "open_current",
 				},
 				event_handlers = {
 					{
@@ -109,7 +110,7 @@ require("lazy").setup({
 				},
 			})
 			local opts = { noremap = true, silent = true }
-			vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle<CR>", opts)
+			vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle position=current<CR>", opts)
 
 			-- Disable netrw
 			vim.g.loaded_netrw = 1
