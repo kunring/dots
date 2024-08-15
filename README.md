@@ -29,7 +29,7 @@ Neovim also uses `rust-analyzer` managed by `rustup`.
 
 Installing `lazy.nvim`, the package manager for nvim:
 ```sh
-DIR="~/.config/nvim/lazy"
+DIR="~/.local/share/nvim/lazy"
 mkdir -p "$DIR"
 cd "$DIR"
 git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable
