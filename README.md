@@ -5,7 +5,7 @@ PKGS=("hyprland"
 # Control the theme from "KDE System Settings".
 "plasma-integration" "systemsettings"
 "kitty"
-"ttf-iosevkaterm-nerd"
+"ttf-noto-nerd"
 "neovim"
 "waybar"
 "swaylock"
