@@ -8,6 +8,7 @@ PKGS=("hyprland"
 "ttf-iosevkaterm-nerd"
 "neovim"
 "waybar"
+"swaylock"
 "python"
 "wofi"
 "nodejs" "yarn" # Used for some nvim packages
