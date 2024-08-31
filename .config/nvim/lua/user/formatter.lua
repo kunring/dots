@@ -21,6 +21,9 @@ require("formatter").setup({
 		json = {
 			denoprettier("json"),
 		},
+		jsonc = {
+			denoprettier("json"),
+		},
 		html = {
 			require("formatter.filetypes.html").prettier,
 		},
