@@ -1,7 +1,8 @@
 {
   "layer": "top",
-  "height": 33,
+  "height": 30,
   "spacing": 4,
+  "reload_style_on_change": true,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["custom/media"],
   "modules-right": [
@@ -9,62 +10,52 @@
     "cpu",
     "memory",
     "temperature",
+    "backlight",
+    "battery",
     "clock",
-    "tray"
+    "tray",
   ],
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
   "hyprland/window": {
-    "format": "\"{}\"",
-    "separate-outputs": true
+    "format": "{}",
+    "separate-outputs": true,
   },
   "tray": {
     "icon-size": 21,
-    "spacing": 10
+    "spacing": 10,
   },
   "clock": {
     "interval": 1,
     "timezone": "Europe/Helsinki",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%Y.%m.%d %H.%M.%S}"
+    "format": "{:%Y.%m.%d %H.%M.%S}",
+    "actions": {
+      "on-click": "shift_down",
+      "on-click-right": "shift_up",
+    },
   },
   "cpu": {
-    "interval": 3,
-    "format": "{usage}% ",
-    "tooltip": true
+    "interval": 1,
+    "format": "CPU {usage}%",
+    "tooltip": true,
   },
   "memory": {
-    "format": "{used:0.1f}G/{total:0.1f}G ",
-    "interval": 5
+    "format": "MEM {used:0.1f}G/{total:0.1f}G",
+    "interval": 2,
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon2/temp4_input",
     "critical-threshold": 80,
-    "format": "{temperatureC}°C {icon}",
-    "format-icons": ["", "", ""]
-  },
-  "network": {
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format": "{temperatureC}°C",
+    "format-icons": ["", "", ""],
   },
   "pulseaudio": {
     "scroll-step": 1,
-    "format": "{volume}% {icon} {format_source}",
+    "format": "{volume}% {icon}  {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format-source": "{volume}%  ",
+    "format-source-muted": " ",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -72,20 +63,54 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
     "on-click": "pavucontrol",
-	"on-click-right": "$HOME/.config/waybar/toggle-default-source-mute.sh"
+    "on-click-right": "$HOME/.config/waybar/toggle-default-source-mute.sh",
   },
   "custom/media": {
     "format": "{icon} {}",
     "return-type": "json",
-    "max-length": 80,
+    "max-length": 70,
     "format-icons": {
       "spotify": "",
-      "default": "🎜"
+      "default": "🎜",
     },
     "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
-  }
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl -A stop",
+  },
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "full": 99,
+      "good": 98,
+      "normal": 98,
+      "warning": 20,
+      "critical": 20,
+    },
+    "format": "{icon} {capacity}%",
+    "format-good": "{icon} {capacity}%",
+    "format-full": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 30,
+  },
+  "backlight": {
+    "device": "amdgpu_bl1",
+    "format": "{icon}  {percent}%",
+    "format-icons": [
+      "\udb86\ude4e",
+      "\udb86\ude4f",
+      "\udb86\ude50",
+      "\udb86\ude51",
+      "\udb86\ude52",
+      "\udb86\ude53",
+      "\udb86\ude54",
+      "\udb86\ude55",
+      "\udb86\ude56",
+      "\udb81\udee8",
+    ],
+    "interval": 60,
+  },
 }
