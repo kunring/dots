@@ -12,7 +12,7 @@
     "temperature",
     "backlight",
     "battery",
-    "clock",
+    "custom/clock",
     "tray",
   ],
   "hyprland/window": {
@@ -23,15 +23,9 @@
     "icon-size": 21,
     "spacing": 10,
   },
-  "clock": {
+  "custom/clock": {
+    "exec": "date +'%Y.%m.%d %H.%M.%S'",
     "interval": 1,
-    "timezone": "Europe/Helsinki",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{:%Y.%m.%d %H.%M.%S}",
-    "actions": {
-      "on-click": "shift_down",
-      "on-click-right": "shift_up",
-    },
   },
   "cpu": {
     "interval": 1,
