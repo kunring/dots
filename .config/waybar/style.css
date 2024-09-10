@@ -7,9 +7,8 @@
 * {
   font-family:
   /* base */
-  "NotoSans Mono",
-  /* Nerd Font icons in a good relative size */
-  "Font Awesome 6 Free Regular";
+    "NotoSans Mono",
+    /* Nerd Font icons in a good relative size */ "Font Awesome 6 Free Regular";
   font-size: 14px;
 }
 
@@ -73,6 +72,10 @@ window#waybar.empty {
 #tray {
   padding: 0px 2px 0px 2px;
   border-right: 1px solid #adadad;
+}
+/* rightmost element needs a matching left border */
+#pulseaudio {
+  border-left: 1px solid #adadad;
 }
 
 #custom-media {
