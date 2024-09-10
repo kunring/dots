@@ -1,6 +1,7 @@
 Some packages:
 ```sh
-PKGS=("hyprland"
+PKGS=(
+"hyprland"
 # KDE is used for QT's theme as is defined in Hyprland's config.
 # Control the theme from "KDE System Settings".
 "plasma-integration" "systemsettings"
@@ -21,7 +22,9 @@ PKGS=("hyprland"
 "pyright"
 "rustup"
 "deno"
-"clang")
+"clang"
+"stylua"
+)
 
 pacman -S --needed "${PKGS[@]}"
 ```
