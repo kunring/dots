@@ -5,7 +5,11 @@
 @define-color WARN #ff5555;
 
 * {
-  font-family: "NotoSans Mono", "Font Awesome 6 Free Regular";
+  font-family:
+  /* base */
+  "NotoSans Mono",
+  /* Nerd Font icons in a good relative size */
+  "Font Awesome 6 Free Regular";
   font-size: 14px;
 }
 
