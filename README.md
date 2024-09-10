@@ -24,6 +24,7 @@ PKGS=(
 "deno"
 "clang"
 "stylua"
+"haskell-language-server"
 )
 
 pacman -S --needed "${PKGS[@]}"
