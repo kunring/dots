@@ -4,4 +4,5 @@ if status is-interactive
 	set -g fish_color_host brred
 	export EDITOR=nvim
 	export SHELL=/bin/fish
+	export PATH="$PATH:/home/cb/.local/bin"
 end
