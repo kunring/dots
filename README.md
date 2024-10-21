@@ -30,6 +30,10 @@ PKGS=(
 pacman -S --needed "${PKGS[@]}"
 ```
 
+AUR Packages:
+
+`clipse-bin`
+
 Neovim also uses `rust-analyzer` managed by `rustup`.
 
 Installing `lazy.nvim`, the package manager for nvim:
