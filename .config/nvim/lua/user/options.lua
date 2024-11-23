@@ -32,8 +32,8 @@ vim.opt.modeline = true
 vim.opt.modelines = 3
 
 -- godmode
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
+vim.opt.scrolloff = 4
+vim.opt.sidescrolloff = 4
 
 vim.cmd([[set iskeyword+=-]])
 
