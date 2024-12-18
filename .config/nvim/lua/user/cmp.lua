@@ -106,11 +106,11 @@ cmp.setup({
 		native_menu = false,
 	},
 	enabled = function()
+		local inCmdline = vim.api.nvim_get_mode().mode == "c"
 		local context = require("cmp.config.context")
-		if vim.api.nvim_get_mode().mode == "c" then
-			return true
-		else
-			return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
-		end
+		local notInComment = not context.in_treesitter_capture("comment")
+			or not context.in_syntax_group("Comment")
+		local notInZen = vim.diagnostic.config().signs
+		return inCmdline or (notInComment and notInZen)
 	end,
 })
