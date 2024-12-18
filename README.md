@@ -10,6 +10,7 @@ PKGS=(
 "neovim"
 "waybar"
 "swaylock"
+"dunst"
 "python"
 "wofi"
 "nodejs" "yarn" # Used for some nvim packages
