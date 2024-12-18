@@ -7,3 +7,5 @@ vim.api.nvim_create_user_command("NoiseToggle", function()
 	})
 	require("gitsigns").toggle_signs()
 end, { desc = "toggle visibility of diagnostic warnings" })
+
+vim.cmd("NoiseToggle") -- defaulting to enabled
