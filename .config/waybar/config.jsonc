@@ -75,7 +75,7 @@
     "format-good": "{icon} {capacity}%",
     "format-full": " {capacity}%",
     "format-icons": ["", "", "", "", ""],
-    "interval": 30,
+    "interval": 10,
   },
   "backlight": {
     "device": "amdgpu_bl1",
