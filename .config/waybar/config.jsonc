@@ -4,7 +4,7 @@
   "spacing": 4,
   "reload_style_on_change": true,
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["custom/media"],
+  "modules-center": [],
   "modules-right": [
     "pulseaudio",
     "cpu",
@@ -61,19 +61,6 @@
     },
     "on-click": "pavucontrol",
     "on-click-right": "$HOME/.config/waybar/toggle-default-source-mute.sh",
-  },
-  "custom/media": {
-    "format": "{icon} {}",
-    "return-type": "json",
-    "max-length": 70,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜",
-    },
-    "escape": true,
-    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl -A stop",
   },
   "battery": {
     "bat": "BAT0",
