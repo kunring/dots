@@ -1,3 +1,13 @@
+function merge(t1, t2)
+    local result = {}
+    for i = 1, #t1 do
+        table.insert(result, t1[i])
+    end
+    for i = 1, #t2 do
+        table.insert(result, t2[i])
+    end
+    return result
+end
 local mason_servers = {}
 local system_servers = {
 	"hls",
@@ -8,11 +18,7 @@ local system_servers = {
 	"denols",
 	"clangd",
 }
-local servers = {
-	table.unpack(mason_servers),
-	table.unpack(system_servers),
-}
-
+local servers = merge(mason_servers, system_servers)
 local settings = {
 	ui = {
 		border = "none",
