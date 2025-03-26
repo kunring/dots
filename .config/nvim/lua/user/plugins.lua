@@ -12,7 +12,12 @@ require("lazy").setup({
 			configs.setup({
 				ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", "typescript", "rust", "python" },
 				sync_install = false,
-				highlight = { enable = true },
+				highlight = {
+					enable = true,
+					-- VimTeX documentation recommends disabling treesitter:
+					-- https://github.com/lervag/vimtex/blob/bcb14eb6e3739f0c1902115a710292bc37c62d2e/doc/vimtex.txt#L6815
+					disable = { "latex" },
+				},
 				indent = { enable = false },
 			})
 		end,
@@ -117,4 +122,8 @@ require("lazy").setup({
 			vim.g.loaded_netrwPlugin = 1
 		end,
 	},
+	-- Configs for this must be set at load time
+	-- vim.g.vimtex_view_method for example silently fails if
+	-- set after initialisation.
+	"lervag/vimtex",
 })

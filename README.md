@@ -16,6 +16,8 @@ PKGS=(
 "nodejs" "yarn" # Used for some nvim packages
 "nwg-look"
 "breeze-gtk" # Set GTK theme using nwg-look
+"texlive-latex"
+"texlive-langeuropean" # Finnish language pack
 # Section for LSP servers used by nvim:
 "typescript"
 "typescript-language-server"
