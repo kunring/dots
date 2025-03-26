@@ -12,4 +12,15 @@ M.find_denojsonc_ancestor = function(startpath)
 	end)
 end
 
+M.merge = function(t1, t2)
+	local result = {}
+	for i = 1, #t1 do
+		table.insert(result, t1[i])
+	end
+	for i = 1, #t2 do
+		table.insert(result, t2[i])
+	end
+	return result
+end
+
 return M
