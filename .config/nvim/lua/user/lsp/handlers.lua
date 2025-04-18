@@ -85,6 +85,7 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+	client.server_capabilities.documentFormattingProvider = false
 	if client.server_capabilities["documentSymbolProvider"] then
 		require("nvim-navic").attach(client, bufnr)
 	end
