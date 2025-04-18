@@ -8,6 +8,7 @@ local system_servers = {
 	"pyright",
 	"denols",
 	"clangd",
+	"metals",
 }
 local servers = require("user.util").merge(mason_servers, system_servers)
 local settings = {

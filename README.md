@@ -35,7 +35,7 @@ pacman -S --needed "${PKGS[@]}"
 
 AUR Packages:
 
-`clipse-bin`
+`clipse-bin, metals`
 
 Neovim also uses `rust-analyzer` managed by `rustup`.
 
