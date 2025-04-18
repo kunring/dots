@@ -2,7 +2,7 @@
 local mason_servers = {}
 local system_servers = {
 	"hls",
-	"tsserver",
+	"ts_ls",
 	"lua_ls",
 	"rust_analyzer",
 	"pyright",
