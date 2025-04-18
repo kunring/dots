@@ -34,3 +34,10 @@ vim.api.nvim_set_keymap("n", "<leader>F", ":FormatWrite<CR>", opts)
 
 -- Toggle "noise" (LSP diagnostic nags, gitsigns)
 vim.api.nvim_set_keymap("n", "<leader>d", ":NoiseToggle<CR>", opts)
+
+-- Disabling a default mapping for opening the current symbol in man.lua.
+-- This mapping stays as the default only when the buffer has no loaded LSP.
+-- I don't fully understand how this works internally, as simply calling
+-- vim.keymap.del says there is no mapping. However, binding it to a no-op
+-- seems to achieve the desired behaviour.
+vim.api.nvim_set_keymap("n", "K", "<nop>", opts)
