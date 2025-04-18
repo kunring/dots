@@ -1,5 +1,6 @@
--- Mason provided server binaries
+-- Mason provided lspconfig servers
 local mason_servers = {}
+-- System provided lspconfig servers
 local system_servers = {
 	"hls",
 	"ts_ls",
