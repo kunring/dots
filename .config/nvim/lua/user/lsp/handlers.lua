@@ -62,92 +62,61 @@ local function lsp_highlight_document(client)
 	end
 end
 
+local cmds = {
+	{
+		key = "gD",
+		action = "<cmd>lua vim.lsp.buf.declaration()<CR>",
+	},
+	{
+		key = "gd",
+		action = "<cmd>lua vim.lsp.buf.definition()<CR>",
+	},
+	{
+		key = "K",
+		action = '<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<CR>',
+	},
+	{
+		key = "gi",
+		action = "<cmd>lua vim.lsp.buf.implementation()<CR>",
+	},
+	{
+		key = "<C-k>",
+		action = "<cmd>lua vim.lsp.buf.signature_help()<CR>",
+	},
+	{
+		key = "<leader>rn",
+		action = "<cmd>lua vim.lsp.buf.rename()<CR>",
+	},
+	{
+		key = "gr",
+		action = "<cmd>lua vim.lsp.buf.references()<CR>",
+	},
+	{
+		key = "<leader>ca",
+		action = "<cmd>lua vim.lsp.buf.code_action()<CR>",
+	},
+	{
+		key = "[d",
+		action = '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>',
+	},
+	{
+		key = "gl",
+		action = '<cmd>lua vim.diagnostic.open_float({ scope = "line", border = "rounded" })<CR>',
+	},
+	{
+		key = "]d",
+		action = '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>',
+	},
+	{
+		key = "<leader>q",
+		action = "<cmd>lua vim.diagnostic.setloclist()<CR>",
+	},
+}
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gD",
-		"<cmd>lua vim.lsp.buf.declaration()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gd",
-		"<cmd>lua vim.lsp.buf.definition()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"K",
-		'<cmd>lua vim.lsp.buf.hover({ border = "rounded" })<CR>',
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gi",
-		"<cmd>lua vim.lsp.buf.implementation()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<C-k>",
-		"<cmd>lua vim.lsp.buf.signature_help()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<leader>rn",
-		"<cmd>lua vim.lsp.buf.rename()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gr",
-		"<cmd>lua vim.lsp.buf.references()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<leader>ca",
-		"<cmd>lua vim.lsp.buf.code_action()<CR>",
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"[d",
-		'<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>',
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"gl",
-		'<cmd>lua vim.diagnostic.open_float({ scope = "line", border = "rounded" })<CR>',
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"]d",
-		'<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>',
-		opts
-	)
-	vim.api.nvim_buf_set_keymap(
-		bufnr,
-		"n",
-		"<leader>q",
-		"<cmd>lua vim.diagnostic.setloclist()<CR>",
-		opts
-	)
+	for _, cmd in pairs(cmds) do
+		vim.api.nvim_buf_set_keymap(bufnr, "n", cmd.key, cmd.action, opts)
+	end
 end
 
 M.on_attach = function(client, bufnr)
