@@ -29,7 +29,8 @@ require("tokyonight").setup({
 		highlights.CursorLine = { bg = "", underline = true }
 		highlights.NeoTreeFileStats = { fg = colors.cyan }
 		highlights.NeoTreeFileStatsHeader = { fg = colors.cyan, bold = true }
-		highlights["@markup.raw.markdown_inline"] = { fg = colors.cyan, bg = custom.bg_grey }
+		highlights["@markup.raw.markdown_inline"] =
+			{ fg = colors.cyan, bg = custom.bg_grey }
 	end,
 })
 
@@ -41,7 +42,7 @@ if not status_ok then
 	return
 end
 
-vim.api.nvim_set_hl(0, '@lsp.type.unresolvedReference.rust', {})
+vim.api.nvim_set_hl(0, "@lsp.type.unresolvedReference.rust", {})
 
 -- Disable ~ in sidebar for blank lines
 vim.opt.fillchars = { eob = " " }

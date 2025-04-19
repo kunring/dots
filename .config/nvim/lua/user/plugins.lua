@@ -10,7 +10,17 @@ require("lazy").setup({
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
-				ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", "typescript", "rust", "python" },
+				ensure_installed = {
+					"c",
+					"lua",
+					"vim",
+					"vimdoc",
+					"javascript",
+					"html",
+					"typescript",
+					"rust",
+					"python",
+				},
 				sync_install = false,
 				highlight = {
 					enable = true,
@@ -24,7 +34,11 @@ require("lazy").setup({
 	},
 	{
 		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		cmd = {
+			"MarkdownPreviewToggle",
+			"MarkdownPreview",
+			"MarkdownPreviewStop",
+		},
 		build = "cd app && yarn install",
 		init = function()
 			vim.g.mkdp_filetypes = { "markdown" }
@@ -84,8 +98,18 @@ require("lazy").setup({
 		init = function()
 			require("copy-as-markdown").setup()
 			local opts = { noremap = true, silent = true }
-			vim.api.nvim_set_keymap("n", "<leader>cm", ":CopyAsMarkdown<CR>", opts)
-			vim.api.nvim_set_keymap("v", "<leader>cm", ":CopyAsMarkdown<CR>", opts)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>cm",
+				":CopyAsMarkdown<CR>",
+				opts
+			)
+			vim.api.nvim_set_keymap(
+				"v",
+				"<leader>cm",
+				":CopyAsMarkdown<CR>",
+				opts
+			)
 		end,
 	},
 	{
@@ -115,7 +139,12 @@ require("lazy").setup({
 				},
 			})
 			local opts = { noremap = true, silent = true }
-			vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle position=current<CR>", opts)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>e",
+				":Neotree toggle position=current<CR>",
+				opts
+			)
 
 			-- Disable netrw
 			vim.g.loaded_netrw = 1
