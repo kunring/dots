@@ -110,7 +110,7 @@ cmp.setup({
 		local context = require("cmp.config.context")
 		local notInComment = not context.in_treesitter_capture("comment")
 			or not context.in_syntax_group("Comment")
-		local notInZen = vim.diagnostic.config().signs
-		return inCmdline or (notInComment and notInZen)
+		local noiseEnabled = vim.diagnostic.is_enabled()
+		return inCmdline or (notInComment and noiseEnabled)
 	end,
 })
