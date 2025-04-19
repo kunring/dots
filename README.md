@@ -28,6 +28,8 @@ PKGS=(
 "clang"
 "stylua"
 "haskell-language-server"
+# Development tools
+"openjdk21-src" # Completes definitions for Scala LSP
 )
 
 pacman -S --needed "${PKGS[@]}"
