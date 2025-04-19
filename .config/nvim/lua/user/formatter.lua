@@ -10,7 +10,7 @@ end
 
 require("formatter").setup({
 	logging = true,
-	log_level = vim.log.levels.WARN,
+	log_level = vim.log.levels.INFO,
 	filetype = {
 		typescript = {
 			denoprettier("typescript"),
