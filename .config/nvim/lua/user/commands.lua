@@ -8,3 +8,9 @@ vim.cmd("NoiseToggle") -- defaulting to enabled
 vim.api.nvim_create_user_command("Today", function()
 	vim.fn.search("# Tänään")
 end, { desc = "Hyppää kalenterissa tähän päivään" })
+
+vim.api.nvim_create_user_command(
+	"RemoveTrailingWhitespace",
+	require("formatter.filetypes.any").substitute_trailing_whitespace,
+	{ desc = "Removes trailing whitespace from buffer" }
+)
