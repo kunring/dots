@@ -41,3 +41,20 @@ vim.api.nvim_set_keymap("n", "<leader>d", ":NoiseToggle<CR>", opts)
 -- vim.keymap.del says there is no mapping. However, binding it to a no-op
 -- seems to achieve the desired behaviour.
 vim.api.nvim_set_keymap("n", "K", "<nop>", opts)
+
+-- Bind j and k to move along display lines instead of physical lines,
+-- except on commands.
+vim.keymap.set("n", "k", function()
+	if vim.v.count == 0 then
+		return "gk"
+	else
+		return "k"
+	end
+end, { expr = true, noremap = true })
+vim.keymap.set("n", "j", function()
+	if vim.v.count == 0 then
+		return "gj"
+	else
+		return "j"
+	end
+end, { expr = true, noremap = true })
