@@ -40,3 +40,12 @@ vim.cmd([[set iskeyword+=-]])
 
 vim.g.delimitMate_expand_cr = 2
 vim.g.delimitMate_expand_space = true
+
+-- Disable vim autoindenting based on keys in scala.
+-- The provided config seems to be outdated for scala 3.
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "scala",
+	callback = function()
+		vim.opt_local.indentkeys = ""
+	end,
+})
