@@ -48,6 +48,3 @@ mkdir -p "$DIR"
 cd "$DIR"
 git clone --filter=blob:none https://github.com/folke/lazy.nvim.git --branch=stable
 ```
-
-Place your own wallpaper at `~/.config/hypr/background.png`.
-[Source for example wallpaper used in screenshot.png](https://github.com/DaringCuteSeal/wallpapers/blob/gh-pages/os/arch-journey/arch-journey-dark.png).
