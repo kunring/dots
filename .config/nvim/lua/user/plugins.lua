@@ -59,7 +59,6 @@ require("lazy").setup({
 
 	"rafamadriz/friendly-snippets",
 
-	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 
@@ -155,4 +154,5 @@ require("lazy").setup({
 	-- vim.g.vimtex_view_method for example silently fails if
 	-- set after initialisation.
 	"lervag/vimtex",
+	"neovim/nvim-lspconfig",
 })

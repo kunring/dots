@@ -49,3 +49,24 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.indentkeys = ""
 	end,
 })
+
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = {
+		linhl = {
+			[vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+			[vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+			[vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+			[vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+		},
+	},
+	update_in_insert = true,
+	underline = true,
+	severity_sort = true,
+	float = {
+		focusable = false,
+		source = false,
+		header = "",
+		prefix = "",
+	},
+})
