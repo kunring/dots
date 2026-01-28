@@ -5,7 +5,7 @@ PKGS=(
 # KDE is used for QT's theme as is defined in Hyprland's config.
 # Control the theme from "KDE System Settings".
 "plasma-integration" "systemsettings"
-"kitty"
+"foot"
 "ttf-noto-nerd" "noto-fonts-emoji"
 "neovim"
 "waybar"
