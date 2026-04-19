@@ -59,9 +59,6 @@ require("lazy").setup({
 
 	"rafamadriz/friendly-snippets",
 
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
-
 	{
 		"utilyre/barbecue.nvim",
 		dependencies = {
