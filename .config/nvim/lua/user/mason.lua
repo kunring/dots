@@ -6,7 +6,8 @@ local servers = {
 	"rust_analyzer",
 	"pyright",
 	"denols",
-	"clangd",
+	"clangd_c",
+	"clangd_cpp",
 	"metals",
 }
 
