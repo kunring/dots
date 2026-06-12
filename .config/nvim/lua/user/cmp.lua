@@ -1,13 +1,5 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-	return
-end
-
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-	return
-end
-
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local kind_icons = {
@@ -105,12 +97,12 @@ cmp.setup({
 		ghost_text = false,
 		native_menu = false,
 	},
+	completion = { autocomplete = false },
 	enabled = function()
 		local inCmdline = vim.api.nvim_get_mode().mode == "c"
 		local context = require("cmp.config.context")
 		local notInComment = not context.in_treesitter_capture("comment")
 			or not context.in_syntax_group("Comment")
-		local noiseEnabled = vim.diagnostic.is_enabled()
-		return inCmdline or (notInComment and noiseEnabled)
+		return inCmdline or notInComment
 	end,
 })
