@@ -17,19 +17,22 @@ window#waybar {
   color: @WHITE;
 }
 
-.modules-right,
-.modules-left {
+.modules-right {
   background-color: @GREY_BG;
+}
+.modules-left {
+  background-color: @BLUE_BG;
 }
 
 #workspaces button {
   padding: 0px 11px 0px 11px;
   color: #888888;
+  background-color: @GREY_BG;
   border-radius: 0;
 }
 
 #workspaces button.active {
-  background-color: #225877;
+  background-color: @BLUE_BG;
   color: @WHITE;
   border: 1px solid @RED;
 }
@@ -49,7 +52,7 @@ window#waybar {
 
 #window {
   color: @WHITE;
-  background-color: #285577;
+  background-color: @BLUE_BG;
   padding: 0px 10px 0px 10px;
 }
 
