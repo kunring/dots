@@ -4,24 +4,24 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"folke/lazy.nvim",
 	{
-		"nvim-treesitter/nvim-treesitter",
+		"neovim-treesitter/nvim-treesitter",
+		dependencies = { "neovim-treesitter/treesitter-parser-registry" },
 		build = ":TSUpdate",
-		config = function()
-			local configs = require("nvim-treesitter.configs")
-
-			configs.setup({
-				ensure_installed = {
-					"c",
-					"lua",
-					"vim",
-					"vimdoc",
-					"javascript",
-					"html",
-					"typescript",
-					"rust",
-					"python",
-				},
-				sync_install = false,
+		init = function()
+			require("nvim-treesitter").install({
+				"c",
+				"cpp",
+				"lua",
+				"vim",
+				"vimdoc",
+				"javascript",
+				"typescript",
+				"html",
+				"rust",
+				"python",
+				"haskell",
+			})
+			require("nvim-treesitter").setup({
 				highlight = {
 					enable = true,
 					-- VimTeX documentation recommends disabling treesitter:
