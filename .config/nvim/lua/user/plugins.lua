@@ -20,6 +20,7 @@ require("lazy").setup({
 				"rust",
 				"python",
 				"haskell",
+				"hare",
 			})
 			require("nvim-treesitter").setup({
 				highlight = {
